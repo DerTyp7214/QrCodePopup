@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">QrCodeDialog</string>
+    <string name="loading_generating_qr_code">Generating QR-Code</string>
+</resources>

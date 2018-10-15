@@ -1,0 +1,16 @@
+*.iml
+.gradle
+/local.properties
+/.idea/navEditor.xml
+/.idea/assetWizardSettings.xml
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+/.idea/
+/app/build/
+/app/src/androidTest/
+/app/src/test/
+/qrcodedialog/build/
+/qrcodedialog/src/androidTest/
+/qrcodedialog/src/test/
