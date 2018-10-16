@@ -8,18 +8,18 @@
 ### 1. Add it in your root build.gradle at the end of repositories
 ```gradle
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
 	}
+}
 ```
 
 ### 2. Add the dependency:
 ```gralde
 dependencies {
-	        implementation 'com.github.DerTyp7214:QrCodePopup:<LATEST_VERSION>'
-	}
+	implementation 'com.github.DerTyp7214:QrCodePopup:<LATEST_VERSION>'
+}
 ```
 
 ## Usage
