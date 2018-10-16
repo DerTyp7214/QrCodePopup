@@ -30,12 +30,12 @@ Requirement Level | Function
 ---------|-----------------------------
 **must** | `new QRCodeDialog(<Activity>)`
 **must** | `show(<Content>)`
-_optional_ | `customLogo(<Bitmap>)`
+_optional_ | `customImageTint(<Bitmap>)`
 
 ### Example
 
 ```java
 QRCodeDialog qrCodeDialog = new QRCodeDialog(<Activity>);
-qrCodeDialog.customLogo(<Bitmap>);
+qrCodeDialog.customImageTint(<Bitmap>);
 qrCodeDialog.show(<Content>);
 ```
