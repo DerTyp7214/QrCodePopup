@@ -126,7 +126,7 @@ public class QRCodeHelper {
         int brightness = (int) Math.sqrt(rgb[0] * rgb[0] * .241 + rgb[1]
                 * rgb[1] * .691 + rgb[2] * rgb[2] * .068);
 
-        if (brightness >= 210) {
+        if (brightness >= 200) {
             rtnValue = true;
         }
         return rtnValue;
