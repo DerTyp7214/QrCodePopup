@@ -1,5 +1,6 @@
 package com.dertyp7214.qrcodepopup;
 
+import android.graphics.BitmapFactory;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 
@@ -14,7 +15,9 @@ public class MainActivity extends AppCompatActivity {
 
         findViewById(R.id.textView).setOnClickListener(v -> {
             QRCodeDialog qrCodeDialog = new QRCodeDialog(this);
-            qrCodeDialog.show("Hallo");
+            qrCodeDialog.customImageTint(
+                    BitmapFactory.decodeResource(getResources(), R.drawable.ic_launcher));
+            qrCodeDialog.show("Seeeeehhhhhhr langer text LOHL!!!");
         });
     }
 }
