@@ -8,18 +8,18 @@
 ### 1. Add it in your root build.gradle at the end of repositories
 ```gradle
 allprojects {
-		repositories {
-			...
-			maven { url 'https://jitpack.io' }
-		}
-	}
+    repositories {
+        ...
+        maven { url 'https://jitpack.io' }
+    }
+}
 ```
 
 ### 2. Add the dependency:
 ```gralde
 dependencies {
-	        implementation 'com.github.DerTyp7214:QrCodePopup:<LATEST_VERSION>'
-	}
+    implementation 'com.github.DerTyp7214:QrCodePopup:<LATEST_VERSION>'
+}
 ```
 
 ## Usage
@@ -30,12 +30,12 @@ Requirement Level | Function
 ---------|-----------------------------
 **must** | `new QRCodeDialog(<Activity>)`
 **must** | `show(<Content>)`
-_optional_ | `customLogo(<Bitmap>)`
+_optional_ | `customImageTint(<Bitmap>)`
 
 ### Example
 
 ```java
 QRCodeDialog qrCodeDialog = new QRCodeDialog(<Activity>);
-qrCodeDialog.customLogo(<Bitmap>);
+qrCodeDialog.customImageTint(<Bitmap>);
 qrCodeDialog.show(<Content>);
 ```
