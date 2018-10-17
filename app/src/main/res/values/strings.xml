@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QrCodePopup</string>
+    <string name="long_string">https://github.com/DerTyp7214/</string>
 </resources>
