@@ -17,6 +17,7 @@ import android.content.Intent
 import android.graphics.Bitmap
 import android.net.Uri
 import android.os.Bundle
+import android.support.annotation.ColorInt
 import android.support.v4.content.FileProvider
 import android.util.Log
 import android.widget.ImageView
@@ -25,11 +26,13 @@ import com.dertyp7214.qrcodedialog.helpers.QRCodeHelper.drawableToBitmap
 import com.dertyp7214.qrcodedialog.helpers.QRCodeHelper.generateQRCode
 import java.io.File
 import java.io.FileOutputStream
+import java.util.*
 
 class QRCodeDialog(private val activity: Activity) : Dialog(activity) {
 
     private var bitmap: Bitmap? = null
     private var tintBitmap: Bitmap? = null
+    private val random: Random = Random()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -57,7 +60,7 @@ class QRCodeDialog(private val activity: Activity) : Dialog(activity) {
             FileProvider
                     .getUriForFile(activity, "com.dertyp7214.qrcodepopup.fileprovider", file)
         } catch (e: Exception) {
-            Log.d(TAG, "IOException while trying to write file for sharing: " + e.message)
+            Log.d(TAG, "IOException while trying to write file for sharing: ${e.message}")
             null
         }
     }
@@ -75,6 +78,12 @@ class QRCodeDialog(private val activity: Activity) : Dialog(activity) {
 
     fun customImageTint(tintBitmap: Bitmap) {
         this.tintBitmap = tintBitmap
+    }
+
+    fun customColor(@ColorInt color: Int) {
+        val bmp = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888)
+        bmp.eraseColor(color)
+        this.tintBitmap = bmp
     }
 
     fun show(content: String) {

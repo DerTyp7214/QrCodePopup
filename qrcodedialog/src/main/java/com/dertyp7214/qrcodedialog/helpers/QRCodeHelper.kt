@@ -27,7 +27,8 @@ object QRCodeHelper {
     private const val QRCodeDimension = 1000
 
     fun generateQRCode(context: Context, tintBitmap: Bitmap?, Value: String): Bitmap {
-        val tintBitmap = tintBitmap ?: BitmapFactory.decodeResource(context.resources, R.drawable.logo)
+        val tintBitmap = tintBitmap
+                ?: { val bmp = Bitmap.createBitmap(1, 1, Bitmap.Config.ARGB_8888); bmp.eraseColor(Color.BLACK); bmp }()
         val bitMatrix: BitMatrix
 
         try {
@@ -71,8 +72,8 @@ object QRCodeHelper {
                 (bitmap.height * 0.8f).toInt(), false), whitePane, bitmap.width,
                 1.2f)
 
-        for (x in 0 until bitmap.width) {
-            for (y in 0 until bitmap.height) {
+        (0 until bitmap.width).forEach { x ->
+            (0 until bitmap.height).forEach { y ->
                 val isBlack = bitmap.getPixel(x, y) == Color.BLACK
                 if (isBlack) {
                     bitmap.setPixel(x, y, darkenColor(tintImage.getPixel(x, y)))
@@ -84,7 +85,7 @@ object QRCodeHelper {
 
     private fun darkenColor(@ColorInt color: Int): Int {
         var color = color
-        while (isBrightColor(color)) color = manipulateColor(color, 0.9f)
+        while (isBrightColor(color)) color = manipulateColor(color, 0.99f)
         return color
     }
 
