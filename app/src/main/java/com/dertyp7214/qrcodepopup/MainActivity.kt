@@ -15,7 +15,7 @@ class MainActivity : AppCompatActivity() {
         findViewById<View>(R.id.textView).setOnClickListener {
             val qrCodeDialog = QRCodeDialog(this)
             qrCodeDialog.customImageTint(
-                    BitmapFactory.decodeResource(resources, R.drawable.ic_launcher))
+                    BitmapFactory.decodeResource(resources, R.drawable.icon))
             qrCodeDialog.show(getString(R.string.long_string))
         }
     }
